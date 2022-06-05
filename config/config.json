@@ -2,7 +2,7 @@
   "development": {
     "username": "u0_a332",
     "password": "root",
-    "database": "blog",
+    "database": "portofolio_cms",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

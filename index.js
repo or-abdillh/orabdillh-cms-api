@@ -9,6 +9,7 @@ const connectToDatabase = async () => {
 	try {
 		console.log('Prepare to create connection database ...')
 		await sequelize.authenticate()
+		console.log( sequelize.models )
 		console.log('Success connected to database')	
 	} catch(err) { 
 		console.log('Something wrong from connection : ', err)

@@ -18,8 +18,21 @@ const dialectOptions = env === 'dev' ? {  } : {
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
 	dialect: 'postgres',
 	logging: false,
-	dialectOptions
+	dialectOptions,
+	define: { freezeTableName: true }
 })
 
 // Define model
+const modelsDefined = [
+	require('./models/account.js'),
+	require('./models/contact.js'),
+	require('./models/educations.js'),
+	require('./models/landing.js'),
+	require('./models/projects.js'),
+	require('./models/skills.js'),
+	require('./models/tools.js')
+]
+
+for ( const model of modelsDefined ) { model(sequelize, DataTypes) }
+
 module.exports = sequelize
